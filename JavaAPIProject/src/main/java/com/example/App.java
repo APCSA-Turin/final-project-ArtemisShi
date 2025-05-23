@@ -8,9 +8,12 @@ public class App
 {
     public static void main( String[] args )
     {
-        
+        BirdRanks B =new BirdRanks();
+        BirdCollection d = new BirdCollection();
         
         Question q = new Question("e");
+
+        System.out.println(generator());
     }
 
 
@@ -42,36 +45,37 @@ public class App
 
      
 
-     private Bird generator(){
+     public static String generator(){
+
         int pick= (int) (Math.random()*100)+1;
         int ind=0;
-        if(pick>41){
-           ind= (int) (Math.random()*25);
+        if(pick<41){
+           ind= (int) (Math.random()*24);
            BirdCollection.add(BirdRanks.getDBirds()[ind]);
-            return BirdRanks.getDBirds()[ind];
+            return "You got "+ BirdRanks.getDBirds()[ind].getName()+"\nRank: "+BirdRanks.getDBirds()[ind].getRank()+"\nDescription: "+BirdRanks.getDBirds()[ind].getDesc();
         }
         else{
-            if(pick>71){
-                ind= (int) (Math.random()*20);
+            if(pick<71){
+                ind= (int) (Math.random()*19);
                 BirdCollection.add(BirdRanks.getCBirds()[ind]);
-                return BirdRanks.getCBirds()[ind];
-            }
+                return "You got "+ BirdRanks.getCBirds()[ind].getName()+"\nRank: "+BirdRanks.getCBirds()[ind].getRank()+"\nDescription: "+BirdRanks.getCBirds()[ind].getDesc();
+        }
             else{
-                if(pick>91){
-                ind= (int) (Math.random()*15);
+                if(pick<91){
+                ind= (int) (Math.random()*14);
                 BirdCollection.add(BirdRanks.getBBirds()[ind]);
-                return BirdRanks.getBBirds()[ind];
+                    return "You got "+ BirdRanks.getBBirds()[ind].getName()+"\nRank: "+BirdRanks.getBBirds()[ind].getRank()+"\nDescription: "+BirdRanks.getBBirds()[ind].getDesc();
                 }
                 else{
-                    if(pick>100){
-                        ind= (int) (Math.random()*10);
+                    if(pick<100){
+                        ind= (int) (Math.random()*9);
                         BirdCollection.add(BirdRanks.getABirds()[ind]);
-                        return BirdRanks.getABirds()[ind];
+                        return "You got "+ BirdRanks.getABirds()[ind].getName()+"\nRank: "+BirdRanks.getABirds()[ind].getRank()+"\nDescription: "+BirdRanks.getABirds()[ind].getDesc();
                     }
                     else{
-                        ind= (int) (Math.random()*5);
+                        ind= (int) (Math.random()*4);
                         BirdCollection.add(BirdRanks.getSBirds()[ind]);
-                        return BirdRanks.getSBirds()[ind];
+                        return "You got "+ BirdRanks.getSBirds()[ind].getName()+"\nRank: "+BirdRanks.getSBirds()[ind].getRank()+"\nDescription: "+BirdRanks.getSBirds()[ind].getDesc();
                     }
                 }
             }
