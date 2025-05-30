@@ -9,6 +9,12 @@
   <url>http://maven.apache.org</url>
   <dependencies>
 
+  <properties>
+  <maven.compiler.source>15</maven.compiler.source>
+  <maven.compiler.target>15</maven.compiler.target>
+</properties>
+
+
     <dependency>
             <groupId>org.json</groupId>
             <artifactId>json</artifactId>

@@ -6,6 +6,7 @@ public class Bird {
     private int num;
     private String desc;
 
+    // Constructor that initializes bird with a name, rank(in this case it specifically means rarity), a number(technically the actual rank), and a description
     public Bird(String n, String r, int nn, String d){
         name=n;
         rank=r;
@@ -13,6 +14,7 @@ public class Bird {
         desc=d;
     }
 
+    // Getters
     public int getNum(){
         return num;
     }
@@ -22,7 +24,6 @@ public class Bird {
     public String getName(){
         return name;
     }
-
     public String getRank(){
         return rank;
     }
